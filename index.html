@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>GNEZDO STUDIO / ВОСХИЩАТЬ И СОЗДАВАТЬ</title>
+	<link rel="stylesheet" type="text/css" href="./css/site2.css">
+
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;900&display=swap" rel="stylesheet">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+
+</head>
+<body>
+<div id="content-3d"></div>
+
+
+<div id="main-logo" style="max-width: 30%;"><img src="./i/main-logo.svg"></div>
+<div id="main-messages">
+	<div class="main-messages__1"><span>цифровые</span></div>
+	<div class="main-messages__2"><span>продукты</span></div>
+	<div class="main-messages__3"><span>которые</span></div>
+	<div class="main-messages__4 desktop-only"><span>восхищают</span></div>
+	<div class="main-messages__5 mobile"><span>восхи</span></div>
+	<div class="main-messages__6 mobile"><span>щают</span></div>
+</div>
+
+<div class="create-here"><span>создают здесь</span></div>
+<div class="create-here mobile"><span>здесь</span></div>
+
+<div id="email-link"><a href="mailto:gnezdostudio@gmail.com">gnezdostudio@gmail.com</a></div>
+<div id="phone-text">тел. +7 (914) 657-09-65</div>
+<div id="we-promise"><p>мы готовим</p><p>новый сайт</p></div>
+<div id="year-23"><span class="shadow">`23</span><span>`23</span></div>
+
+<div id="decor-arrow-down"></div>
+
+
+<!-- Import maps polyfill -->
+<!-- Remove this when import maps will be widely supported -->
+<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+
+<script type="importmap">
+	{
+		"imports": {
+			"three": "./threejs/three.module.js",
+			"three/addons/": "./threejs/addons/"
+		}
+	}
+</script>
+
+<script type="module">
+
+import './js/bg-3d-scene2.js';
+
+var Site = {
+	init:function() {
+		this.$mainLogo = $('#main-logo');
+		this.$mainMessages = $('#main-messages');
+		this.$createHere = $('.create-here');
+		this.$wePromise =  $('#we-promise').hide();
+		this.$emailLink = $('#email-link').hide();
+		this.$phoneText =  $('#phone-text').hide();
+		this.$year23 = $('#year-23');
+		
+
+
+		setTimeout(()=>{
+			this.$mainLogo.addClass("showed");			
+		},100);
+		setTimeout(()=>{
+			this.$mainMessages.addClass("showed");			
+		},800);		
+		setTimeout(()=>{
+			this.$createHere.addClass("showed");
+			this.$wePromise.fadeIn("slow");
+			this.$emailLink.fadeIn("slow");
+			this.$phoneText.fadeIn("slow");			
+			this.$year23.addClass("showed");
+		},2800);
+		setTimeout(()=>{
+			$('#decor-arrow-down').addClass("showed");
+		},2900)
+		
+	}
+
+};
+
+Site.init();	
+
+</script>
+
+</body>
+</html>
